@@ -1,0 +1,25 @@
+fname = raw_input("Enter file name: ") 
+
+# if the file input is empty set a standard file name
+if len(fname) == 0:
+    fname = 'romeo.txt'   
+
+#open file.
+fh = open(fname)
+
+#Initialise list to add words to.
+lst = list()
+
+# Iterates through each line in filehandle
+for line in fh:
+    #Iterates through each word on line
+    for i in line.split():
+        #Checks to see if word is already in list
+        if not i in lst:
+            #Appends words to list
+            lst.append(i)
+
+#Sorts the lsit alphabetically            
+lst.sort()
+
+print lst
